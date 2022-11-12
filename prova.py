@@ -11,14 +11,6 @@ st.markdown("""<style> .big-fonte2 {font-size:35px !important;}</style>""", unsa
 st.markdown('<p class="big-font">CALISTHENICS TRAINING</p>', unsafe_allow_html=True)
 st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=True)
 
-change_text = """
-<style> div.st-cs.st-c5.st-bc.st-ct.st-cu {visibility: hidden;}
-div.st-cs.st-c5.st-bc.st-ct.st-cu:before {content: "Scegli dei giorni della settimana"; visibility: visible;}
-</style>
-"""
-st.markdown(change_text, unsafe_allow_html=True)
-
-
 #Giorni dell'allenamento
 giorni = st.multiselect(
     "Giorni dell'allenamento",
