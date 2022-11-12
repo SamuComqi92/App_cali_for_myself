@@ -7,6 +7,17 @@ import time
 import json
 
 st.set_page_config(layout="wide")
+st.markdown(
+        f"""
+<style>
+    .reportview-container .main .block-container{{
+        max-width: 30px;
+    }}
+</style>
+""",
+        unsafe_allow_html=True,
+    )
+
 st.markdown("""<style> .big-font {font-size:50px !important;}</style>""", unsafe_allow_html=True)
 st.markdown("""<style> .big-fonte {font-size:20px !important;}</style>""", unsafe_allow_html=True)
 st.markdown("""<style> .big-fonte2 {font-size:35px !important;}</style>""", unsafe_allow_html=True)
