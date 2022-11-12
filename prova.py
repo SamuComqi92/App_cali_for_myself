@@ -27,11 +27,12 @@ def upload_last_session() :
             return
 
         #Pulsante last session
-        button_apply_settings = st.button(label="Ultima sessione salvata",
-                                            on_click = upload_json_settings,
-                                            args=(aa,),
-                                            help="Click to Apply the Settings of the Uploaded file.\\\n"
-                                                    "Please start by uploading a Settings File below")
+        upload_json_settings(aa)
+        #button_apply_settings = st.button(label="Ultima sessione salvata",
+        #                                    on_click = upload_json_settings,
+        #                                    args=(aa,),
+        #                                    help="Click to Apply the Settings of the Uploaded file.\\\n"
+        #                                            "Please start by uploading a Settings File below")
 
 
 
