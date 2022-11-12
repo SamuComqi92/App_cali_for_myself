@@ -11,6 +11,32 @@ st.markdown("""<style> .big-fonte2 {font-size:35px !important;}</style>""", unsa
 st.markdown('<p class="big-font">CALISTHENICS TRAINING</p>', unsafe_allow_html=True)
 st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=True)
 
+def upload_last_session() :
+    #Read last session json file
+    f = open("settings.json")
+    aa = json.load(f)
+
+    if len(aa)==0:
+        return
+    else :
+        #Applico i vari settings
+        def upload_json_settings(file):
+            for k in file.keys():
+                st.session_state[k] = file[k]
+            return
+
+        #Pulsante last session
+        button_apply_settings = st.button(label="Ultima sessione salvata",
+                                            on_click = upload_json_settings,
+                                            args=(aa,),
+                                            help="Click to Apply the Settings of the Uploaded file.\\\n"
+                                                    "Please start by uploading a Settings File below")
+
+
+
+#Container per mettere tutti i parametri/settings
+container_upload_settings_data = st.container()
+
 #Giorni dell'allenamento
 giorni = st.multiselect(
     "Giorni dell'allenamento",
@@ -132,8 +158,20 @@ if flag_step == 1 :
         with cc4 :
             week4 = st.checkbox("Check week 4", key=549)
         
-    if st.button("Save changings!") :
-        a = st.session_state
-        st.write(a)
+# Run the download_upload_settings function
+with container_upload_settings_data:
+    with st.expander(label="UPLOAD CUSTOM SETTINGS / DATA", expanded=False):
+        upload_last_session()
+
+#Per salvare i nuovi cambiamenti
+settings_to_download = {k: v for k, v in st.session_state.items()
+                            if "button" not in k and "file_uploader" not in k}
+Butt_download = st.button(label="Download Settings")
+
+if Butt_download :
+    data = json.dumps(settings_to_download)
+    file = open("settings.json", "w")
+    file.write(data)
+    file.close()
     
     
