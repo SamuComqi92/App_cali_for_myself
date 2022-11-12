@@ -84,7 +84,7 @@ if flag_step == 1 :
                     left_column, center_column1, center_column2, center_column3, center_column4, right_column = st.columns([2,2,1,1,1,1])
                     with left_column :
                         Esercizi = st.selectbox(
-                        'Seleziona gli esercizi in ordine',
+                        'Esercizi in ordine',
                         ['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)'],
                         key=k+100)
                     with center_column1 :
