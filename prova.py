@@ -169,7 +169,7 @@ st.text("")
 st.text("")
 settings_to_download = {k: v for k, v in st.session_state.items()
                             if "button" not in k and "file_uploader" not in k}
-Butt_download = st.button(label="Salva cambiamenti!s")
+Butt_download = st.button(label="Salva cambiamenti!")
 
 if Butt_download :
     data = json.dumps(settings_to_download)
