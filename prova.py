@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import time
+import json
 
 st.markdown("""<style> .big-font {font-size:50px !important;}</style>""", unsafe_allow_html=True)
 st.markdown("""<style> .big-fonte {font-size:20px !important;}</style>""", unsafe_allow_html=True)
