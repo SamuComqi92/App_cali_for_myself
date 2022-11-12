@@ -27,13 +27,11 @@ def upload_last_session() :
             return
 
         #Pulsante last session
-        upload_json_settings(aa)
-        #button_apply_settings = st.button(label="Ultima sessione salvata",
-        #                                    on_click = upload_json_settings,
-        #                                    args=(aa,),
-        #                                    help="Click to Apply the Settings of the Uploaded file.\\\n"
-        #                                            "Please start by uploading a Settings File below")
-
+        button_apply_settings = st.button(label="Carica ultima sessione salvata",
+                                            on_click = upload_json_settings,
+                                            args=(aa,),
+                                            help="Click to Apply the Settings of the Uploaded file.\\\n"
+                                                    "Please start by uploading a Settings File below")
 
 
 #Container per mettere tutti i parametri/settings
@@ -162,8 +160,7 @@ if flag_step == 1 :
         
 # Run the download_upload_settings function
 with container_upload_settings_data:
-    with st.expander(label="UPLOAD CUSTOM SETTINGS / DATA", expanded=False):
-        upload_last_session()
+    upload_last_session()
 
 #Per salvare i nuovi cambiamenti
 st.text("")
