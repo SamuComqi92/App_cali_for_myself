@@ -81,7 +81,7 @@ if flag_step == 1 :
                 key = k+1)
             if N_esercizi != '' :
                 for j in range(int(N_esercizi)) :
-                    left_column, center_column1, center_column2, center_column3, right_column = st.columns([2,2,1,1,1])
+                    left_column, center_column1, center_column2, center_column3, center_column4, right_column = st.columns([2,2,1,1,1])
                     with left_column :
                         Esercizi = st.selectbox(
                         'Seleziona gli esercizi in ordine',
@@ -99,17 +99,22 @@ if flag_step == 1 :
                         key=k+102)
                     with center_column3 :
                         Reps = st.selectbox(
-                        'Reps/Iso',
-                        ['','1','2','3','4','5','6','7','8','9','10','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"'],
+                        'Reps',
+                        ['','1','2','3','4','5','6','7','8','9','10'],
                         key=k+103)
+                    with center_column4 :
+                        Iso = st.selectbox(
+                        'Iso',
+                        ['','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"'],
+                        key=k+104)
                     with right_column :
                         Pausa = st.selectbox(
                         'Pausa/EMOM',
                         ['','1:00','1:30','1:45','2:00','2:30','2:45','3:00'],
-                        key=k+104)
+                        key=k+105)
 
                     globals()[f"Allenamento_{i}_{j}"] = [i,N_esercizi, Esercizi, Propedeutica, Serie, Reps, Pausa]
-                    k = k+105  
+                    k = k+106  
 
 
         
