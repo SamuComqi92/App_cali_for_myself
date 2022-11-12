@@ -132,6 +132,8 @@ if flag_step == 1 :
         with cc4 :
             week4 = st.checkbox("Check week 4", key=549)
         
-
+    if st.button("Save changings!") :
+        a = st.session_state
+        st.write(a)
     
     
