@@ -165,9 +165,11 @@ with container_upload_settings_data:
         upload_last_session()
 
 #Per salvare i nuovi cambiamenti
+st.text("")
+st.text("")
 settings_to_download = {k: v for k, v in st.session_state.items()
                             if "button" not in k and "file_uploader" not in k}
-Butt_download = st.button(label="Download Settings")
+Butt_download = st.button(label="Salva cambiamenti!s")
 
 if Butt_download :
     data = json.dumps(settings_to_download)
