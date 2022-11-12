@@ -14,7 +14,7 @@ st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=Tr
 
 #Giorni dell'allenamento
 giorni = st.multiselect(
-    'Giorni dell''allenamento',
+    "Giorni dell'allenamento",
     ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica'],
     key=1)        
 
