@@ -81,7 +81,7 @@ if flag_step == 1 :
                 key = k+1)
             if N_esercizi != '' :
                 for j in range(int(N_esercizi)) :
-                    left_column, center_column1, center_column2, center_column3, center_column4, right_column = st.columns([2,2,1,1,1])
+                    left_column, center_column1, center_column2, center_column3, center_column4, right_column = st.columns([2,2,1,1,1,1])
                     with left_column :
                         Esercizi = st.selectbox(
                         'Seleziona gli esercizi in ordine',
