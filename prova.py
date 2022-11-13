@@ -222,13 +222,13 @@ if button1 :
         st.session_state.end_time = 0
     st.session_state.start_time = time.time()
     element = st.empty()
-    while button2 is False :
-        time.sleep(1)
+    if button2 :
+        pass
+    else :
+        time.sleep(0.01)
         st.session_state.end_time = time.time()
         st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
-    if button2 :
-        #with ccc1 :
-        #    st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
-        st.session_state.end_time = 0
-        pass
+    #if button2 :
+    #    st.session_state.end_time = 0
+    #    pass
     
