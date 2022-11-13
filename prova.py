@@ -140,11 +140,11 @@ if flag_step == 1 :
 
     m = 200
     if f"Allenamento_{primo_giorno}_{0}" in globals():
-        exec(f"data_final = pd.DataFrame(np.array(Allenamento_{primo_giorno}_{0}).reshape(1,8), columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])")
+        exec(f"data_final = pd.DataFrame(np.array(Allenamento_{primo_giorno}_{0}).reshape(1,7), columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])")
         for i in Giorni_ordinati :
             for j in range(6) :
                 if f"Allenamento_{i}_{j}" in globals():
-                    exec(f"data_final = pd.concat([data_final, pd.DataFrame(np.array(Allenamento_{i}_{j}).reshape(1,8),columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])],axis=0)")
+                    exec(f"data_final = pd.concat([data_final, pd.DataFrame(np.array(Allenamento_{i}_{j}).reshape(1,7),columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])],axis=0)")
                     flag_step = 2
     
     #Rimuovo colonna che non mi serve e taglio il primo record duplicato      
