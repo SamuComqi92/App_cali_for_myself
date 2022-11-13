@@ -126,7 +126,7 @@ if flag_step == 1 :
                         ['','1:00','1:30','1:45','2:00','2:30','2:45','3:00'],
                         key=k+105)
 
-                    globals()[f"Allenamento_{i}_{j}"] = [i,N_esercizi, Esercizi, Propedeutica, Serie, Reps, Pausa]
+                    globals()[f"Allenamento_{i}_{j}"] = [i,N_esercizi, Esercizi, Propedeutica, Serie, Reps, Iso, Pausa]
                     k = k+106  
 
 
@@ -138,14 +138,13 @@ if flag_step == 1 :
     st.text("..................................................................................................")
     st.markdown('<p class="big-fonte2">Scheda</p>', unsafe_allow_html=True)
 
-    st.write(np.array(Allenamento_Domenica_0).reshape(1,8))
     m = 200
     if f"Allenamento_{primo_giorno}_{0}" in globals():
-        exec(f"data_final = pd.DataFrame(np.array(Allenamento_{primo_giorno}_{0}).reshape(1,7), columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])")
+        exec(f"data_final = pd.DataFrame(np.array(Allenamento_{primo_giorno}_{0}).reshape(1,8), columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])")
         for i in Giorni_ordinati :
             for j in range(6) :
                 if f"Allenamento_{i}_{j}" in globals():
-                    exec(f"data_final = pd.concat([data_final, pd.DataFrame(np.array(Allenamento_{i}_{j}).reshape(1,7),columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])],axis=0)")
+                    exec(f"data_final = pd.concat([data_final, pd.DataFrame(np.array(Allenamento_{i}_{j}).reshape(1,8),columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])],axis=0)")
                     flag_step = 2
     
     #Rimuovo colonna che non mi serve e taglio il primo record duplicato      
