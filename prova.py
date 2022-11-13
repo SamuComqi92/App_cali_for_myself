@@ -193,4 +193,42 @@ if Butt_download :
     file.write(data)
     file.close()
     
+################################################################################################
+#Cronometro finale
+st.text("")
+st.text("")
+st.text("")
+st.text("")
+st.markdown('<p class="big-fonte">CRONOMETRO</p>', unsafe_allow_html=True)
+ccc1, ccc2, ccc3, ccc4, ccc5 = st.columns([1,1,1,1,1])
+import time
+def time_convert(sec):
+  mins = sec // 60
+  sec = sec % 60
+  hours = mins // 60
+  return "{}:{}:{:.2f}".format(int(hours),int(mins),sec)
+
+#Creazione pulsanti per iniziare e stoppare il cronometri
+with ccc1:
+    button1 = st.button("Start / Reset")
+
+with ccc2:
+    button2 = st.button("Stop")
+
+if button1 :
+    if "start_time" not in st.session_state :
+        st.session_state.start_time = 0
+  
+    st.session_state.start_time = time.time()
+    element = st.empty()
+    while button2 is False :
+        if "end_time" not in st.session_state :
+            st.session_state.end_time = 0
+        time.sleep(0.01)
+        st.session_state.end_time = time.time()
+        element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
+       
+if button2 :
+    with ccc1 :
+        st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
     
