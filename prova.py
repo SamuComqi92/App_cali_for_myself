@@ -227,8 +227,8 @@ if button1 :
         st.session_state.end_time = time.time()
         st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
     if button2 :
-        with ccc1 :
-            st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
+        #with ccc1 :
+        #    st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
         st.session_state.end_time = 0
         pass
     
