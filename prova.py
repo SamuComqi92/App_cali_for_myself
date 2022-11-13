@@ -223,11 +223,11 @@ if "end_time" not in st.session_state :
 if button1 :        
     st.session_state.start_time = time.time()
     element = st.empty()
-    if button2 is False :
+    while button2 is False :
         time.sleep(1)
         st.session_state.end_time = time.time()
         st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
-    else :
+    if button2 :
         with ccc1 :
             st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
         st.session_state.end_time = 0
