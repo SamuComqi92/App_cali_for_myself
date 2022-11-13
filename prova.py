@@ -208,7 +208,7 @@ def time_convert(sec):
   hours = mins // 60
   return "{}:{}:{:.2f}".format(int(hours),int(mins),sec)
 
-#Creazione pulsanti per iniziare e stoppare il cronometri
+#Creazione pulsanti per iniziare e stoppare il cronometro
 with ccc1:
     button1 = st.button("Start / Reset")
 
@@ -224,7 +224,7 @@ if button1 :
     while button2 is False :
         if "end_time" not in st.session_state :
             st.session_state.end_time = 0
-        time.sleep(0.01)
+        time.sleep(1)
         st.session_state.end_time = time.time()
         element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
        
