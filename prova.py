@@ -206,7 +206,7 @@ def time_convert(sec):
   mins = sec // 60
   sec = sec % 60
   hours = mins // 60
-  return "{}:{}:{:.2f}".format(int(hours),int(mins),sec)
+  return "{}:{}:{:.1f}".format(int(hours),int(mins),sec)
 
 #Creazione pulsanti per iniziare e stoppare il cronometro
 with ccc1:
@@ -226,7 +226,7 @@ if button1 :
         pass
     else :
         while button2 is False:
-            time.sleep(0.01)
+            time.sleep(0.1)
             st.session_state.end_time = time.time()
             element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
     #if button2 :
