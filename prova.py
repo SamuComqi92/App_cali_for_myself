@@ -138,6 +138,7 @@ if flag_step == 1 :
     st.text("..................................................................................................")
     st.markdown('<p class="big-fonte2">Scheda</p>', unsafe_allow_html=True)
 
+    st.write(np.array(Allenamento_Domenica_0).reshape(1,8))
     m = 200
     if f"Allenamento_{primo_giorno}_{0}" in globals():
         exec(f"data_final = pd.DataFrame(np.array(Allenamento_{primo_giorno}_{0}).reshape(1,7), columns=['Giorno','N_esercizio','Esercizio','Propedeutica','Serie','Reps','Isometria','Pausa'])")
