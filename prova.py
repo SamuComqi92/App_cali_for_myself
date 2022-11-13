@@ -215,19 +215,18 @@ with ccc1:
 with ccc2:
     button2 = st.button("Stop")
 
-if button1 :
-    if "start_time" not in st.session_state :
+if "start_time" not in st.session_state :
         st.session_state.start_time = 0
-    
-    if "end_time" not in st.session_state :
-            st.session_state.end_time = 0
-                
+if "end_time" not in st.session_state :
+    st.session_state.end_time = 0
+
+if button1 :        
     st.session_state.start_time = time.time()
     element = st.empty()
     if button2 is False :
         time.sleep(1)
         st.session_state.end_time = time.time()
-        element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
+        st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
     else :
         with ccc1 :
             st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
