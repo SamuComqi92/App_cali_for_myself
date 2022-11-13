@@ -229,7 +229,7 @@ if button1 :
         element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
        
 if button2 :
-    st.session_state.end_time = 0
     with ccc1 :
         st.title(time_convert(st.session_state.end_time - st.session_state.start_time))
+    st.session_state.end_time = 0
     
