@@ -218,12 +218,13 @@ with ccc2:
 if button1 :
     if "start_time" not in st.session_state :
         st.session_state.start_time = 0
-  
+    
+    if "end_time" not in st.session_state :
+            st.session_state.end_time = 0
+                
     st.session_state.start_time = time.time()
     element = st.empty()
     if button2 is False :
-        if "end_time" not in st.session_state :
-            st.session_state.end_time = 0
         time.sleep(1)
         st.session_state.end_time = time.time()
         element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
