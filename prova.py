@@ -25,6 +25,10 @@ st.markdown("""<style> .big-fonte2 {font-size:35px !important;}</style>""", unsa
 st.markdown('<p class="big-font">CALISTHENICS TRAINING</p>', unsafe_allow_html=True)
 st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=True)
 
+#Array vari ed eventuali
+Giorni_allenamento =  ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica']
+
+
 def upload_last_session() :
     #Read last session json file
     f = open("settings.json")
@@ -53,7 +57,7 @@ container_upload_settings_data = st.container()
 #Giorni dell'allenamento
 giorni = st.multiselect(
     "Giorni dell'allenamento",
-    ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica'],
+    Giorni_allenamento,
     key=1)        
 
 primo_giorno = st.selectbox(
