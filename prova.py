@@ -6,19 +6,8 @@ import datetime
 import time
 import json
 
-#st.set_page_config(layout="wide")
-st.markdown(
-        f"""
-<style>
-    .reportview-container .main .block-container{{
-        padding-right: 10rem;
-        padding-left: 10rem;
-    }}
-</style>
-""",
-        unsafe_allow_html=True,
-    )
-
+#Configurazione pagina e font size
+st.markdown(f"""<style>.reportview-container .main .block-container{{padding-right: 10rem;padding-left: 10rem;}}</style>""",unsafe_allow_html=True,)
 st.markdown("""<style> .big-font {font-size:50px !important;}</style>""", unsafe_allow_html=True)
 st.markdown("""<style> .big-fonte {font-size:20px !important;}</style>""", unsafe_allow_html=True)
 st.markdown("""<style> .big-fonte2 {font-size:35px !important;}</style>""", unsafe_allow_html=True)
@@ -27,8 +16,10 @@ st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=Tr
 
 #Array vari ed eventuali
 Giorni_allenamento =  ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica']
+Numero_esercizi = ['','1','2','3','4','5','6','7','8','9','10']
+Esercizi_vari = ['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)']
 
-
+st.write(Esercizi_vari.sort())
 def upload_last_session() :
     #Read last session json file
     f = open("settings.json")
@@ -94,7 +85,7 @@ if flag_step == 1 :
             k = k+1
             N_esercizi = st.selectbox(
                 "Numero di esercizi",
-                ['','1','2','3','4','5','6'],
+                Numero_esercizi,
                 key = k+1)
             if N_esercizi != '' :
                 for j in range(int(N_esercizi)) :
