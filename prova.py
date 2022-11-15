@@ -17,9 +17,9 @@ st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=Tr
 #Array vari ed eventuali
 Giorni_allenamento =  ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica']
 Numero_esercizi = ['','1','2','3','4','5','6','7','8','9','10']
-Esercizi_vari = ['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)']
+Esercizi_vari = sorted(['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)'])
 
-st.write(sorted(Numero_esercizi))
+st.write(Esercizi_vari)
 
 def upload_last_session() :
     #Read last session json file
