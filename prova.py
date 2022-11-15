@@ -17,10 +17,16 @@ st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=Tr
 #Array vari ed eventuali
 Giorni_allenamento =  ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica']
 Numero_esercizi = ['','1','2','3','4','5','6','7','8','9','10']
-Esercizi_vari = sorted(['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)'])
+Esercizi_vari = sorted(['','OAP: max rom', 'OAP: mezzo rom basso', 'OAP: mezzo rom alto', 'OAP: archer pullup', 'OAP: archer pullup sfalsati', 'OAP: australian',
+                        'PLANCHE: isometria','PLANCHE: isometria (verde)','PLANCHE: isometria (giallo)','PLANCHE: pushup','PLANCHE: HSPU','PLANCHE: bent-arm',
+                        'FRONT LEVER: mezzi raises','FRONT LEVER: full raises','FRONT LEVER: ice cream maker','FRONT LEVER: isometria','FRONT LEVER: isometria (verde)','FRONT LEVER: isometria (giallo)','FRONT LEVER: pullup','FRONT LEVER: touch','FRONT LEVER: negativa',
+                        'BACK_LEVER: pullup','BACK_LEVER: isometria','BACK_LEVER: touch','BACK_LEVER: raises'])
+Propedeutica_esercizi = ['','Libero (OAP)', 'Pancia al muro (HSPU)', 'Schiena al muro (HSPU)', 'Tuck', 'Adv tuck', 'Adv Adv tuck','One leg', 'Adv One leg', 'Adv Adv One leg', 'HL one leg', 'HL','Straddle','Full']
+Serie_Reps = ['','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+Isometria_esercizi = ['','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"']
+Pausa_esercizi = ['','0:15','0:30','0:45','1:00','1:15','1:30','1:45','2:00','2:15','2:30','2:45','3:00','3:30','4:00','4:30','5:00']
 
-st.write(Esercizi_vari)
-
+#Funzione per caricare la sessione precedentemente salvata
 def upload_last_session() :
     #Read last session json file
     f = open("settings.json")
@@ -94,39 +100,38 @@ if flag_step == 1 :
                     with left_column :
                         Esercizi = st.selectbox(
                         'Esercizi in ordine',
-                        ['','OAP: MAX rom','OAP: australian','PLANCHE: Isometria','PLANCHE: Isometria (verde)','PLANCHE: Isometria (giallo)','PLANCHE: Pushup','PLANCHE: HSPU','PLANCHE: Bent-arm','FRONT: Mezzi raises','FRONT: Ice_cream','FRONT: Isometria','FRONT: Pullup','BACK_LEVER: Pullup','BACK_LEVER: Pullup (+ iso)'],
+                        Esercizi_vari,
                         key=k+100)
                     with center_column1 :
                         Propedeutica = st.selectbox(
                         'Seleziona la propedeutica',
-                        ['','Libero (OAP)', 'Pancia al muro (HSPU)', 'Tuck','Adv tuck', 'Adv Adv tuck','One leg', 'Adv One leg', 'Adv Adv One leg', 'HL one leg', 'HL','Straddle','Full'],
+                        Propedeutica_esercizi,
                         key=k+101)
                     with center_column2 :
                         Serie = st.selectbox(
                         'Serie',
-                        ['','1','2','3','4','5','6','7','8','9','10'],
+                        Serie_Reps,
                         key=k+102)
                     with center_column3 :
                         Reps = st.selectbox(
                         'Reps',
-                        ['','1','2','3','4','5','6','7','8','9','10'],
+                        Serie_Reps,
                         key=k+103)
                     with center_column4 :
                         Iso = st.selectbox(
                         'Iso',
-                        ['','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"'],
+                        Isometria_esercizi,
                         key=k+104)
                     with right_column :
                         Pausa = st.selectbox(
                         'Pausa/EMOM',
-                        ['','1:00','1:30','1:45','2:00','2:30','2:45','3:00'],
+                        Pausa_esercizi,
                         key=k+105)
 
                     globals()[f"Allenamento_{i}_{j}"] = [i,N_esercizi, Esercizi, Propedeutica, Serie, Reps, Iso, Pausa]
                     k = k+106  
 
-
-        
+    #Creazione scheda di allenamento
     st.text("")
     st.text("")
     st.text("")
@@ -151,7 +156,7 @@ if flag_step == 1 :
     if st.checkbox('Mostrami la scheda completa') and flag_step == 2:  
         st.write(data_final.iloc[1:,:].reset_index().drop("index",axis=1))
 
-    #Seleziona il giorno
+    #Seleziona il giorno per mostrare gli esercizi specifici
     st.text("")
     st.text("")
     Giorno_training = st.selectbox(
@@ -159,6 +164,7 @@ if flag_step == 1 :
         Giorni_ordinati,
         key = 1457)
 
+    #Check completamento
     if Giorno_training and flag_step == 2 :
         meh = data_final.iloc[1:,:].reset_index().drop("index",axis=1)
         st.write(meh[meh.Giorno == Giorno_training])
