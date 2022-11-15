@@ -191,7 +191,6 @@ Butt_salvataggio = st.button(label="Salva cambiamenti!")
 
 if Butt_salvataggio :
     data = json.dumps(settings_to_download)
-    st.write(data)
     file = open("settings.json", "w")
     file.write(data)
     file.close()
