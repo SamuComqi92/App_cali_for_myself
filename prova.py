@@ -185,51 +185,10 @@ st.text("")
 st.text("")
 settings_to_download = {k: v for k, v in st.session_state.items()
                             if "button" not in k and "file_uploader" not in k}
-Butt_download = st.button(label="Salva cambiamenti!")
+Butt_salvataggio = st.button(label="Salva cambiamenti!")
 
-if Butt_download :
+if Butt_salvataggio :
     data = json.dumps(settings_to_download)
     file = open("settings.json", "w")
     file.write(data)
     file.close()
-    
-################################################################################################
-#Cronometro finale
-st.text("")
-st.text("")
-st.text("")
-st.text("")
-st.markdown('<p class="big-fonte">CRONOMETRO</p>', unsafe_allow_html=True)
-ccc1, ccc2, ccc3, ccc4, ccc5 = st.columns([1,1,1,1,1])
-import time
-def time_convert(sec):
-  mins = sec // 60
-  sec = sec % 60
-  hours = mins // 60
-  return "{}:{}:{:.1f}".format(int(hours),int(mins),sec)
-
-#Creazione pulsanti per iniziare e stoppare il cronometro
-with ccc1:
-    button1 = st.button("Start / Reset")
-
-with ccc2:
-    button2 = st.button("Stop")
-
-if "start_time" not in st.session_state :
-        st.session_state.start_time = 0
-if button1 :        
-    if "end_time" not in st.session_state :
-        st.session_state.end_time = 0
-    st.session_state.start_time = time.time()
-    element = st.empty()
-    if button2 :
-        pass
-    else :
-        while button2 is False:
-            time.sleep(0.1)
-            st.session_state.end_time = time.time()
-            element.title(time_convert(st.session_state.end_time - st.session_state.start_time))
-    #if button2 :
-    #    st.session_state.end_time = 0
-    #    pass
-    
