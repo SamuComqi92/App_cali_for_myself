@@ -23,7 +23,7 @@ Esercizi_vari = ['','OAP: australian','OAP: archer pullup', 'OAP: archer pullup 
                     'BACK_LEVER: pullup','BACK_LEVER: isometria','BACK_LEVER: touch','BACK_LEVER: raises']
 Propedeutica_esercizi = ['','Libero (OAP)', 'Pancia al muro (HSPU)', 'Schiena al muro (HSPU)', 'Tuck', 'Adv tuck', 'Adv Adv tuck','One leg', 'Adv One leg', 'Adv Adv One leg', 'HL one leg', 'HL','Straddle','Full']
 Serie_Reps = ['','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
-Isometria_esercizi = ['','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"']
+Isometria_esercizi = ['','1s','2s','3s','4s','5s','6s','7s','8s','9s','10s']
 Pausa_esercizi = ['','0:15','0:30','0:45','1:00','1:15','1:30','1:45','2:00','2:15','2:30','2:45','3:00','3:30','4:00','4:30','5:00']
 
 #Funzione per caricare la sessione precedentemente salvata
