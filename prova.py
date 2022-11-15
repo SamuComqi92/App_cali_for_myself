@@ -17,10 +17,10 @@ st.markdown('<p class="big-fonte">Samuele Campitiello</p>', unsafe_allow_html=Tr
 #Array vari ed eventuali
 Giorni_allenamento =  ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì','Sabato','Domenica']
 Numero_esercizi = ['','1','2','3','4','5','6','7','8','9','10']
-Esercizi_vari = sorted(['','OAP: max rom', 'OAP: mezzo rom basso', 'OAP: mezzo rom alto', 'OAP: archer pullup', 'OAP: archer pullup sfalsati', 'OAP: australian',
-                        'PLANCHE: isometria','PLANCHE: isometria (verde)','PLANCHE: isometria (giallo)','PLANCHE: pushup','PLANCHE: HSPU','PLANCHE: bent-arm',
-                        'FRONT LEVER: mezzi raises','FRONT LEVER: full raises','FRONT LEVER: ice cream maker','FRONT LEVER: isometria','FRONT LEVER: isometria (verde)','FRONT LEVER: isometria (giallo)','FRONT LEVER: pullup','FRONT LEVER: touch','FRONT LEVER: negativa',
-                        'BACK_LEVER: pullup','BACK_LEVER: isometria','BACK_LEVER: touch','BACK_LEVER: raises'])
+Esercizi_vari = ['','OAP: australian','OAP: archer pullup', 'OAP: archer pullup sfalsati','OAP: mezzo rom basso', 'OAP: mezzo rom alto','OAP: max rom', 
+                    'PLANCHE: isometria','PLANCHE: isometria (verde)','PLANCHE: isometria (giallo)','PLANCHE: pushup','PLANCHE: HSPU','PLANCHE: bent-arm',
+                    'FRONT LEVER: mezzi raises','FRONT LEVER: full raises','FRONT LEVER: ice cream maker','FRONT LEVER: isometria','FRONT LEVER: isometria (verde)','FRONT LEVER: isometria (giallo)','FRONT LEVER: pullup','FRONT LEVER: touch','FRONT LEVER: negativa',
+                    'BACK_LEVER: pullup','BACK_LEVER: isometria','BACK_LEVER: touch','BACK_LEVER: raises']
 Propedeutica_esercizi = ['','Libero (OAP)', 'Pancia al muro (HSPU)', 'Schiena al muro (HSPU)', 'Tuck', 'Adv tuck', 'Adv Adv tuck','One leg', 'Adv One leg', 'Adv Adv One leg', 'HL one leg', 'HL','Straddle','Full']
 Serie_Reps = ['','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
 Isometria_esercizi = ['','1"','2"','3"','4"','5"','6"','7"','8"','9"','10"']
